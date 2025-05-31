@@ -21,116 +21,199 @@ let num1 = "";
 let num2 = "";
 let operator = "";
 let operatorPressed = false;
+disp.innerHTML = "0";
 
-operate(6,2,"+");
+btnPlus.addEventListener('click', () => {
+    operator = "+";
+    operatorPressed = true;
+    disp.innerHTML = "+";
+});
+
+btnMinus.addEventListener('click', () => {
+    operator = "-";
+    operatorPressed = true;
+    disp.innerHTML = "-";
+});
+
+btnDivide.addEventListener('click', () => {
+    operator = "/";
+    operatorPressed = true;
+    disp.innerHTML = "/";
+});
+
+btnMultiply.addEventListener('click', () => {
+    operator = "x";
+    operatorPressed = true;
+    disp.innerHTML = "x";
+});
 
 btnOne.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "1";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1;
+
+    } else if (operatorPressed == true) {
+        num2 = num2 + "1";
+        disp.innerHTML = num2;
+    }
 });
 
 btnTwo.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "2";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1;
+    } else if (operatorPressed == true) {
+        num2 = num2 + "2";
+        disp.innerHTML = num2;
+    }
 });
 
 btnThree.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "3";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1;
+    } else if (operatorPressed == true) {
+        num2 = num2 + "3";
+        disp.innerHTML = num2;
+    }
 });
 
 btnFour.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "4";
-        console.log("num 1 = " + num1); 
+        disp.innerHTML = num1;
+    } else if (operatorPressed == true) {
+        num2 = num2 + "4";
+        disp.innerHTML = num2;
     } 
 });
 
 btnFive.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "5";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1;
+    } else if (operatorPressed == true) {
+        num2 = num2 + "5";
+        disp.innerHTML = num2;
+    }
 });
 
 btnSix.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "6";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1; 
+    } else if (operatorPressed == true) {
+        num2 = num2 + "6";
+        disp.innerHTML = num2;
+    }
 });
 
 btnSeven.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "7";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1; 
+    } else if (operatorPressed == true) {
+        num2 = num2 + "7";
+        disp.innerHTML = num2;
+    }
 });
 
 btnEight.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "8";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1; 
+    } else if (operatorPressed == true) {
+        num2 = num2 + "8";
+        disp.innerHTML = num2;
+    }
 });
 
 btnNine.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "9";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1; 
+    } else if (operatorPressed == true) {
+        num2 = num2 + "9";
+        disp.innerHTML = num2;
+    }
 });
 
 btnZero.addEventListener('click', () => {
     if (operatorPressed == false) {
         num1 = num1 + "0";
-        console.log("num 1 = " + num1); 
-    } 
+        disp.innerHTML = num1; 
+    } else if (operatorPressed == true) {
+        num2 = num2 + "0";
+        disp.innerHTML = num2;
+    }
 });
 
-function add(num1, num2) {
-    result = parseInt(num1) + parseInt(num2);
-    console.log(parseInt(num1) + " + " + parseInt(num2) + " = " + result);
+btnEqual.addEventListener('click', () => {
+    if ((num1 == "") & (num2 == "")) {
+        disp.innerHTML = "0";
+    } else if (num1 == "") {
+        disp.innerHTML = num1;
+    } else operate(num1, num2, operator);
+});
+
+btnClear.addEventListener('click', () => {
+    clearAll();
+})
+
+function clearAll() {
+    num1 = "";
+    num2 = "";
+    operator = "";
+    operatorPressed = false;
+    disp.innerHTML = "0";
+}
+
+function add(fnNum1, fnNum2) {
+    result = parseInt(fnNum1) + parseInt(fnNum2);
+    console.log(parseInt(fnNum1) + " + " + parseInt(fnNum2) + " = " + result);
+    disp.innerHTML = result;
     return result;
 }
 
-function subtract(num1, num2) {
-    result = parseInt(num1) - parseInt(num2);
-    console.log(parseInt(num1) + " - " + parseInt(num2) + " = " + result);
+function subtract(fnNum1, fnNum2) {
+    result = parseInt(fnNum1) - parseInt(fnNum2);
+    console.log(parseInt(fnNum1) + " - " + parseInt(fnNum2) + " = " + result);
+    disp.innerHTML = result;
     return result;
 }
 
-function multiply(num1, num2) {
-    result =  parseInt(num1) * parseInt(num2);
-    console.log(parseInt(num1) + " x " + parseInt(num2) + " = " + result);
+function multiply(fnNum1, fnNum2) {
+    result =  parseInt(fnNum1) * parseInt(fnNum2);
+    console.log(parseInt(fnNum1) + " x " + parseInt(fnNum2) + " = " + result);
+    disp.innerHTML = result;
     return result;
 }
 
-function divide(num1, num2) {
-    result =  parseInt(num1) / parseInt(num2);
-    console.log(parseInt(num1) + " / " + parseInt(num2) + " = " + result);
+function divide(fnNum1, fnNum2) {
+    if (fnNum2 == 0) {
+        clearAll();
+        disp.innerHTML = "You are an idiot";
+        return;
+    }
+    result =  parseInt(fnNum1) / parseInt(fnNum2);
+    console.log(parseInt(fnNum1) + " / " + parseInt(fnNum2) + " = " + result);
+    disp.innerHTML = result;
     return result;
 }
 
-function operate(num1, num2, operator) {
-    switch (operator) {
+function operate(fnNum1, fnNum2, fnOperator) {
+    switch (fnOperator) {
         case "+":
-            add(num1, num2);
+            add(fnNum1, fnNum2);
             break;
         case "-":
-            subtract(num1, num2);
+            subtract(fnNum1, fnNum2);
             break;
         case "x":
-            multiply(num1, num2);
+            multiply(fnNum1, fnNum2);
             break;
         case "/":
-            divide(num1, num2);
+            divide(fnNum1, fnNum2);
             break;
     }
 }
