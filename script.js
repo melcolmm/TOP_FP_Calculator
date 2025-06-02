@@ -21,37 +21,69 @@ let num1 = "";
 let num2 = "";
 let operator = "";
 let operatorPressed = false;
+let equalPressed = false;
 disp.innerHTML = "0";
 
 btnPlus.addEventListener('click', () => {
+    if ((operatorPressed == true)
+        & (num1 != "") & (num2 != "")) {
+        console.log(num1 + " " + operator + num2 + " " + " = ");
+        operate(num1, num2, operator);
+        num1 = result;
+        console.log("Result = " + num1);
+        num2 = "";
+    };
     operator = "+";
     operatorPressed = true;
     disp.innerHTML = "+";
 });
 
 btnMinus.addEventListener('click', () => {
+    if ((operatorPressed == true)
+        & (num1 != "") & (num2 != "")) {
+        operate(num1, num2, operator);
+        num1 = result;
+        console.log("Result = " + num1);
+        num2 = "";
+    }
     operator = "-";
     operatorPressed = true;
     disp.innerHTML = "-";
 });
 
 btnDivide.addEventListener('click', () => {
+    if ((operatorPressed == true)
+        & (num1 != "") & (num2 != "")) {
+        operate(num1, num2, operator);
+        num1 = result;
+        console.log("Result = " + num1);
+        num2 = "";
+    }
     operator = "/";
     operatorPressed = true;
     disp.innerHTML = "/";
 });
 
 btnMultiply.addEventListener('click', () => {
+    if ((operatorPressed == true)
+        & (num1 != "") & (num2 != "")) {
+        operate(num1, num2, operator);
+        num1 = result;
+        console.log("Result = " + num1);
+        num2 = "";
+    }
     operator = "x";
     operatorPressed = true;
     disp.innerHTML = "x";
 });
 
 btnOne.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "1";
         disp.innerHTML = num1;
-
     } else if (operatorPressed == true) {
         num2 = num2 + "1";
         disp.innerHTML = num2;
@@ -59,6 +91,9 @@ btnOne.addEventListener('click', () => {
 });
 
 btnTwo.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "2";
         disp.innerHTML = num1;
@@ -69,6 +104,9 @@ btnTwo.addEventListener('click', () => {
 });
 
 btnThree.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "3";
         disp.innerHTML = num1;
@@ -79,6 +117,9 @@ btnThree.addEventListener('click', () => {
 });
 
 btnFour.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "4";
         disp.innerHTML = num1;
@@ -89,6 +130,9 @@ btnFour.addEventListener('click', () => {
 });
 
 btnFive.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "5";
         disp.innerHTML = num1;
@@ -99,6 +143,9 @@ btnFive.addEventListener('click', () => {
 });
 
 btnSix.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "6";
         disp.innerHTML = num1; 
@@ -109,6 +156,9 @@ btnSix.addEventListener('click', () => {
 });
 
 btnSeven.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "7";
         disp.innerHTML = num1; 
@@ -119,6 +169,9 @@ btnSeven.addEventListener('click', () => {
 });
 
 btnEight.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "8";
         disp.innerHTML = num1; 
@@ -129,6 +182,9 @@ btnEight.addEventListener('click', () => {
 });
 
 btnNine.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "9";
         disp.innerHTML = num1; 
@@ -139,6 +195,9 @@ btnNine.addEventListener('click', () => {
 });
 
 btnZero.addEventListener('click', () => {
+    if (equalPressed == true) {
+        clearAll();
+    }
     if (operatorPressed == false) {
         num1 = num1 + "0";
         disp.innerHTML = num1; 
@@ -154,6 +213,7 @@ btnEqual.addEventListener('click', () => {
     } else if (num1 == "") {
         disp.innerHTML = num1;
     } else operate(num1, num2, operator);
+    equalPressed = true;
 });
 
 btnClear.addEventListener('click', () => {
@@ -165,6 +225,7 @@ function clearAll() {
     num2 = "";
     operator = "";
     operatorPressed = false;
+    equalPressed = false;
     disp.innerHTML = "0";
 }
 

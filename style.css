@@ -2,17 +2,15 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
-    border-color: red;
-    border-style: solid;
-    border-width: 2px;
 }
 
 #calculator {
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 800px;
-    border-color: blue;
+    height: 600px;
+    background-color: darkgray;
+    border-color: black;
     border-style: solid;
     border-width: 2px;
 }
@@ -21,7 +19,7 @@
     display: flex;
     background-color: lightgray;
     font: 48px TI-83;
-    border-color: green;
+    border-color: black;
     border-style: solid;
     border-width: 2px;
     justify-content: flex-end;
@@ -30,7 +28,7 @@
 #grid {
     display: flex;
     flex-direction: row;
-    border-color: red;
+    border-color: black;
     border-style: solid;
     border-width: 2px;
 }
@@ -40,18 +38,12 @@
     flex-grow: 3;
     flex-direction: row;
     flex-wrap: wrap;
-    border-color: blue;
-    border-style: solid;
-    border-width: 2px;
 }
 
 #calcs {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    border-color: green;
-    border-style: solid;
-    border-width: 2px;
 }
 
 button {
